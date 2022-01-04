@@ -1,0 +1,693 @@
+local ScreenGui = Instance.new("ScreenGui")
+local GUI = Instance.new("Frame")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local NameRemoverB = Instance.new("TextButton")
+local GrabB = Instance.new("TextButton")
+local PlayMusicB = Instance.new("TextButton")
+local Safe1B = Instance.new("TextButton")
+local Safe2B = Instance.new("TextButton")
+local TPB = Instance.new("TextButton")
+local KillB = Instance.new("TextButton")
+local InsertPlayerName = Instance.new("TextBox")
+local TextLabel = Instance.new("TextLabel")
+local KickB = Instance.new("TextButton")
+local LiftFasterB = Instance.new("TextButton")
+local CronusB = Instance.new("TextButton")
+local ZeusB = Instance.new("TextButton")
+local PoseidonB = Instance.new("TextButton")
+local PoseionB = Instance.new("TextButton")
+local AntiAFKB = Instance.new("TextButton")
+local AutoFarmSB = Instance.new("TextButton")
+local AutoFarmStopB = Instance.new("TextButton")
+local KillAllB = Instance.new("TextButton")
+local BetterGraphicB = Instance.new("TextButton")
+local OpenMain = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local YouMust = Instance.new("TextLabel")
+
+-- Properties
+
+ScreenGui.Parent = game.CoreGui
+
+GUI.Name = "GUI"
+GUI.Parent = ScreenGui
+GUI.BackgroundColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+GUI.Position = UDim2.new(0.349953562, 0, 0.229985446, 0)
+GUI.Size = UDim2.new(0, 406, 0, 401)
+GUI.Visible = false
+GUI.Active = true
+GUI.Draggable = true
+
+UIAspectRatioConstraint.Parent = GUI
+
+NameRemoverB.Name = "Name RemoverB"
+NameRemoverB.Parent = GUI
+NameRemoverB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+NameRemoverB.BorderColor3 = Color3.new(0.666667, 0, 1)
+NameRemoverB.BorderSizePixel = 3
+NameRemoverB.Position = UDim2.new(0.705735683, 0, 0.591022491, 0)
+NameRemoverB.Size = UDim2.new(0, 95, 0, 29)
+NameRemoverB.Font = Enum.Font.Fantasy
+NameRemoverB.Text = "Name Remover"
+NameRemoverB.TextColor3 = Color3.new(0, 1, 0.498039)
+NameRemoverB.TextScaled = true
+NameRemoverB.TextSize = 14
+NameRemoverB.TextWrapped = true
+NameRemoverB.MouseButton1Down:connect(function()
+for _,m in pairs(game:GetService("Workspace"):GetDescendants()) do
+if m.ClassName == "TextLabel" then 
+if m.Text == game:GetService("Players").LocalPlayer.Name then
+m:Destroy()
+for j,m in pairs(game:GetService("Players").LocalPlayer:GetDescendants()) do
+if m.ClassName == "TextLabel" then 
+if m.Text == game:GetService("Players").LocalPlayer.Name then
+m:Destroy()
+for h,v in pairs(workspace[game.Players.LocalPlayer.Name].Head:GetChildren()) do
+if v:IsA('BillboardGui') then
+v:Remove()
+end
+end
+end
+end
+end
+end
+end
+end
+
+while true do
+    for i,s in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if s:IsA("Accessory") then
+    s.Parent = workspace
+    end
+    end
+
+    for i,f in pairs(game.Workspace[game.Players.LocalPlayer.Name].Head:GetChildren()) do
+        if f:IsA("Decal") and f.Name == "face" then
+            f.Parent = nil
+        end
+    end
+
+    if game.Players.LocalPlayer.Character.Shirt then
+    game.Players.LocalPlayer.Character.Shirt:Remove()
+    else
+    end
+    if game.Players.LocalPlayer.Character.Pants then
+    game.Players.LocalPlayer.Character.Pants:Remove()
+    else
+    end
+    if game.Players.LocalPlayer.Character["Shirt Graphic"] then
+    game.Players.LocalPlayer.Character["Shirt Graphic"]:Remove()
+    else
+    end
+    if game.Players.LocalPlayer.Character.Torso.roblox then
+    game.Players.LocalPlayer.Character.Torso.roblox:Remove()
+    else
+    end
+    game:GetService("RunService").Stepped:wait()
+end
+end)
+
+GrabB.Name = "GrabB"
+GrabB.Parent = GUI
+GrabB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+GrabB.BorderColor3 = Color3.new(0.666667, 0, 1)
+GrabB.BorderSizePixel = 3
+GrabB.Position = UDim2.new(0.705735683, 0, 0.216957629, 0)
+GrabB.Size = UDim2.new(0, 95, 0, 29)
+GrabB.Font = Enum.Font.Fantasy
+GrabB.Text = "PlayerGrabber"
+GrabB.TextColor3 = Color3.new(0, 1, 0.498039)
+GrabB.TextScaled = true
+GrabB.TextSize = 14
+GrabB.TextWrapped = true
+GrabB.MouseButton1Down:connect(function()
+	Target = "username"
+
+	NOW = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	game.Players.LocalPlayer.Character.Humanoid.Name = 1
+	local l = game.Players.LocalPlayer.Character["1"]:Clone()
+	l.Parent = game.Players.LocalPlayer.Character
+	l.Name = "Humanoid"
+	wait(0.1)
+	game.Players.LocalPlayer.Character["1"]:Destroy()
+	game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+	game.Players.LocalPlayer.Character.Animate.Disabled = true
+	wait(0.1)
+	game.Players.LocalPlayer.Character.Animate.Disabled = false
+	game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+	for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+		game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+	end
+	local function tp(player,player2)
+		local char1,char2=player.Character,player2.Character
+		if char1 and char2 then
+			char1.HumanoidRootPart.CFrame = char2.HumanoidRootPart.CFrame
+		end
+	end
+	local function getout(player,player2)
+		local char1,char2=player.Character,player2.Character
+		if char1 and char2 then
+			char1:MoveTo(char2.Head.Position)
+		end
+	end
+	tp(game.Players[Target], game.Players.LocalPlayer)
+	wait(0.1)
+	tp(game.Players[Target], game.Players.LocalPlayer)
+	wait(0.3)
+	getout(game.Players.LocalPlayer, game.Players[Target])
+	wait(0.2)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = NOW
+end)
+
+PlayMusicB.Name = "PlayMusicB"
+PlayMusicB.Parent = GUI
+PlayMusicB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+PlayMusicB.BorderColor3 = Color3.new(0.666667, 0, 1)
+PlayMusicB.BorderSizePixel = 3
+PlayMusicB.Position = UDim2.new(0.379052371, 0, 0.339152157, 0)
+PlayMusicB.Size = UDim2.new(0, 95, 0, 29)
+PlayMusicB.Font = Enum.Font.Fantasy
+PlayMusicB.Text = "Play Music (ID)"
+PlayMusicB.TextColor3 = Color3.new(0, 1, 0.498039)
+PlayMusicB.TextScaled = true
+PlayMusicB.TextSize = 14
+PlayMusicB.TextWrapped = true
+PlayMusicB.MouseButton1Click:Connect(function()
+	local music = Instance.new("Sound")
+	local id = InsertPlayerName.Text
+	music.Volume = 3
+	music.PlaybackSpeed = 1
+	music.Looped = false
+	music.SoundId = "rbxassetid://"..id
+	music:Play()
+	music.Parent = game:GetService("ReplicatedStorage")
+end)
+
+Safe1B.Name = "Safe1B"
+Safe1B.Parent = GUI
+Safe1B.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+Safe1B.BorderColor3 = Color3.new(0.666667, 0, 1)
+Safe1B.BorderSizePixel = 3
+Safe1B.Position = UDim2.new(0.0548628569, 0, 0.339152157, 0)
+Safe1B.Size = UDim2.new(0, 95, 0, 29)
+Safe1B.Font = Enum.Font.Fantasy
+Safe1B.Text = "Safe 1"
+Safe1B.TextColor3 = Color3.new(0, 1, 0.498039)
+Safe1B.TextScaled = true
+Safe1B.TextSize = 14
+Safe1B.TextWrapped = true
+Safe1B.MouseButton1Click:Connect(function()
+	local Part1 = Instance.new("Part", game.Workspace)
+	Part1.Name = 'ThisOne'
+	Part1.Size = Vector3.new(250,2,250)
+	Part1.Position = Vector3.new(-814.32, 14116.4176, 1917.74)
+	Part1.Anchored = true
+	Part1.CanCollide = true
+	game.Players.LocalPlayer.Character:MoveTo(Part1.Position)
+end)
+
+Safe2B.Name = "Safe2B"
+Safe2B.Parent = GUI
+Safe2B.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+Safe2B.BorderColor3 = Color3.new(0.666667, 0, 1)
+Safe2B.BorderSizePixel = 3
+Safe2B.Position = UDim2.new(0.705735683, 0, 0.339152157, 0)
+Safe2B.Size = UDim2.new(0, 95, 0, 29)
+Safe2B.Font = Enum.Font.Fantasy
+Safe2B.Text = "Chat Spy"
+Safe2B.TextColor3 = Color3.new(0, 1, 0.498039)
+Safe2B.TextScaled = true
+Safe2B.TextSize = 14
+Safe2B.TextWrapped = true
+Safe2B.MouseButton1Down:connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/ColuiCheSpara/ChatSpy/main/ChatSpy'))()
+end)
+
+TPB.Name = "TPB"
+TPB.Parent = GUI
+TPB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+TPB.BorderColor3 = Color3.new(0.666667, 0, 1)
+TPB.BorderSizePixel = 3
+TPB.Position = UDim2.new(0.0548628569, 0, 0.463840425, 0)
+TPB.Size = UDim2.new(0, 95, 0, 29)
+TPB.Font = Enum.Font.Fantasy
+TPB.Text = "TP"
+TPB.TextColor3 = Color3.new(0, 1, 0.498039)
+TPB.TextScaled = true
+TPB.TextSize = 14
+TPB.TextWrapped = true
+TPB.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[InsertPlayerName.Text].HumanoidRootPart.CFrame
+end)
+
+
+KillB.Name = "KillB"
+KillB.Parent = GUI
+KillB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+KillB.BorderColor3 = Color3.new(0.666667, 0, 1)
+KillB.BorderSizePixel = 3
+KillB.Position = UDim2.new(0.705735683, 0, 0.463840425, 0)
+KillB.Size = UDim2.new(0, 95, 0, 29)
+KillB.Font = Enum.Font.Fantasy
+KillB.Text = "Kill"
+KillB.TextColor3 = Color3.new(0, 1, 0.498039)
+KillB.TextScaled = true
+KillB.TextSize = 14
+KillB.TextWrapped = true
+KillB.MouseButton1Click:Connect(function()
+	for i = 1,500 do
+		game.Workspace[InsertPlayerName.Text].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector
+		wait()
+	end
+end)
+
+InsertPlayerName.Name = "InsertPlayerName"
+InsertPlayerName.Parent = GUI
+InsertPlayerName.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+InsertPlayerName.Position = UDim2.new(0.379052371, 0, 0.463840395, 0)
+InsertPlayerName.Size = UDim2.new(0, 96, 0, 29)
+InsertPlayerName.Font = Enum.Font.SourceSans
+InsertPlayerName.Text = "Player Smasher"
+InsertPlayerName.TextColor3 = Color3.new(0, 1, 0.498039)
+InsertPlayerName.TextSize = 14
+
+TextLabel.Parent = GUI
+TextLabel.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TextLabel.Position = UDim2.new(-0.00191420317, 0, -0.00193475187, 0)
+TextLabel.Size = UDim2.new(0, 401, 0, 72)
+TextLabel.Font = Enum.Font.Creepster
+TextLabel.Text = "Colui's GUI V2"
+TextLabel.TextColor3 = Color3.new(0, 1, 0.498039)
+TextLabel.TextSize = 56
+TextLabel.TextWrapped = true
+
+KickB.Name = "KickB"
+KickB.Parent = GUI
+KickB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+KickB.BorderColor3 = Color3.new(0.666667, 0, 1)
+KickB.BorderSizePixel = 3
+KickB.Position = UDim2.new(0.379052371, 0, 0.591022491, 0)
+KickB.Size = UDim2.new(0, 95, 0, 29)
+KickB.Font = Enum.Font.Fantasy
+KickB.Text = "Kick Player"
+KickB.TextColor3 = Color3.new(0, 1, 0.498039)
+KickB.TextScaled = true
+KickB.TextSize = 14
+KickB.TextWrapped = true
+KickB.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1770,3160,-369)
+end)
+
+LiftFasterB.Name = "Lift FasterB"
+LiftFasterB.Parent = GUI
+LiftFasterB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+LiftFasterB.BorderColor3 = Color3.new(0.666667, 0, 1)
+LiftFasterB.BorderSizePixel = 3
+LiftFasterB.Position = UDim2.new(0.0548628569, 0, 0.591022491, 0)
+LiftFasterB.Size = UDim2.new(0, 95, 0, 29)
+LiftFasterB.Font = Enum.Font.Fantasy
+LiftFasterB.Text = "Fast Lift"
+LiftFasterB.TextColor3 = Color3.new(0, 1, 0.498039)
+LiftFasterB.TextScaled = true
+LiftFasterB.TextSize = 14
+LiftFasterB.TextWrapped = true
+LiftFasterB.MouseButton1Click:Connect(function()
+	_G.Lift = true
+
+	while _G.Lift do
+		wait(0.00001)
+		local table_1 = {
+			[1] = 'GainMuscle'
+		};
+		local Target = game:GetService("ReplicatedStorage").RemoteEvent;
+		Target:FireServer(table_1);
+	end
+end)
+
+CronusB.Name = "CronusB"
+CronusB.Parent = GUI
+CronusB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+CronusB.BorderColor3 = Color3.new(0.666667, 0, 1)
+CronusB.BorderSizePixel = 3
+CronusB.Position = UDim2.new(0.0548628569, 0, 0.720698297, 0)
+CronusB.Size = UDim2.new(0, 95, 0, 29)
+CronusB.Font = Enum.Font.Fantasy
+CronusB.Text = "Cronus"
+CronusB.TextColor3 = Color3.new(0, 1, 0.498039)
+CronusB.TextScaled = true
+CronusB.TextSize = 14
+CronusB.TextWrapped = true
+CronusB.MouseButton1Down:connect(function()
+	if _G.CR == true then _G.CR = false else _G.CR = true end
+	while _G.CR do
+		wait()
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):Activate()
+		end
+		local A_1 = 
+			{
+				[1] = "Skill_Activated", 
+				[2] = Ray.new(Vector3.new(-739.530945, 558.037659, 2341.94678), Vector3.new(0.594776273, -0.46816507, -0.653500319)), 
+				[3] = "Skill7"
+			}
+		local Event = game:GetService("ReplicatedStorage").RemoteEvent
+		Event:FireServer(A_1)
+	end
+end)
+
+ZeusB.Name = "ZeusB"
+ZeusB.Parent = GUI
+ZeusB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+ZeusB.BorderColor3 = Color3.new(0.666667, 0, 1)
+ZeusB.BorderSizePixel = 3
+ZeusB.Position = UDim2.new(0.379052371, 0, 0.720698297, 0)
+ZeusB.Size = UDim2.new(0, 95, 0, 29)
+ZeusB.Font = Enum.Font.Fantasy
+ZeusB.Text = "Zeus"
+ZeusB.TextColor3 = Color3.new(0, 1, 0.498039)
+ZeusB.TextScaled = true
+ZeusB.TextSize = 14
+ZeusB.TextWrapped = true
+ZeusB.MouseButton1Down:connect(function()
+	if _G.ZS == true then _G.ZS = false else _G.ZS = true end
+	while _G.ZS do
+		wait()
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):Activate()
+		end
+		local A_1 = 
+			{
+				[1] = "Skill_Activated", 
+				[2] = Ray.new(Vector3.new(-739.530945, 558.037659, 2341.94678), Vector3.new(0.594776273, -0.46816507, -0.653500319)), 
+				[3] = "Skill6"
+			}
+		local Event = game:GetService("ReplicatedStorage").RemoteEvent
+		Event:FireServer(A_1)
+	end
+end)
+
+PoseidonB.Name = "PoseidonB"
+PoseidonB.Parent = GUI
+PoseidonB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+PoseidonB.BorderColor3 = Color3.new(0.666667, 0, 1)
+PoseidonB.BorderSizePixel = 3
+PoseidonB.Position = UDim2.new(0.705735683, 0, 0.720698297, 0)
+PoseidonB.Size = UDim2.new(0, 95, 0, 29)
+PoseidonB.Font = Enum.Font.Fantasy
+PoseidonB.Text = "Poseidon"
+PoseidonB.TextColor3 = Color3.new(0, 1, 0.498039)
+PoseidonB.TextScaled = true
+PoseidonB.TextSize = 14
+PoseidonB.TextWrapped = true
+PoseidonB.MouseButton1Down:connect(function()
+	if _G.PS == true then _G.PS = false else _G.PS = true end
+	while _G.PS do
+		wait()
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):Activate()
+		end
+		local A_1 = 
+			{
+				[1] = "Skill_Activated", 
+				[2] = Ray.new(Vector3.new(-739.530945, 558.037659, 2341.94678), Vector3.new(0.594776273, -0.46816507, -0.653500319)), 
+				[3] = "Skill3"
+			}
+		local Event = game:GetService("ReplicatedStorage").RemoteEvent
+		Event:FireServer(A_1)
+	end
+end)
+
+PoseionB.Name = "PoseionB"
+PoseionB.Parent = GUI
+PoseionB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+PoseionB.BorderColor3 = Color3.new(0.666667, 0, 1)
+PoseionB.BorderSizePixel = 3
+PoseionB.Position = UDim2.new(0.705735683, 0, 0.720698297, 0)
+PoseionB.Size = UDim2.new(0, 95, 0, 29)
+PoseionB.Font = Enum.Font.Fantasy
+PoseionB.Text = "Poseidon"
+PoseionB.TextColor3 = Color3.new(0, 1, 0.498039)
+PoseionB.TextScaled = true
+PoseionB.TextSize = 14
+PoseionB.TextWrapped = true
+PoseionB.MouseButton1Down:connect(function()
+	if _G.PS == true then _G.PS = false else _G.PS = true end
+	while _G.PS do
+		wait()
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):Activate()
+		end
+		local A_1 = 
+			{
+				[1] = "Skill_Activated", 
+				[2] = Ray.new(Vector3.new(-739.530945, 558.037659, 2341.94678), Vector3.new(0.594776273, -0.46816507, -0.653500319)), 
+				[3] = "Skill3"
+			}
+		local Event = game:GetService("ReplicatedStorage").RemoteEvent
+		Event:FireServer(A_1)
+	end
+end)
+
+AntiAFKB.Name = "AntiAFKB"
+AntiAFKB.Parent = GUI
+AntiAFKB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+AntiAFKB.BorderColor3 = Color3.new(0.666667, 0, 1)
+AntiAFKB.BorderSizePixel = 3
+AntiAFKB.Position = UDim2.new(0.0548628457, 0, 0.216957614, 0)
+AntiAFKB.Size = UDim2.new(0, 95, 0, 29)
+AntiAFKB.Font = Enum.Font.Fantasy
+AntiAFKB.Text = "AutoLift (Boost)"
+AntiAFKB.TextColor3 = Color3.new(0, 1, 0.498039)
+AntiAFKB.TextScaled = true
+AntiAFKB.TextSize = 14
+AntiAFKB.TextWrapped = true
+AntiAFKB.MouseButton1Down:connect(function()
+	if _G.AF == true then _G.AF = false else _G.AF = true end
+	while _G.AF do
+		wait()
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):Activate()
+		end
+		local A_1 = 
+			{
+				[1] = "Skill_Disabled", 
+				[2] = Ray.new(Vector3.new(-739.530945, 558.037659, 2341.94678), Vector3.new(0.594776273, -0.46816507, -0.653500319)), 
+				[3] = "Skill0"
+			}
+		local Event = game:GetService("ReplicatedStorage").RemoteEvent
+		Event:FireServer(A_1)
+	end
+end)
+AutoFarmSB.Name = "AutoFarmSB"
+AutoFarmSB.Parent = GUI
+AutoFarmSB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+AutoFarmSB.BorderColor3 = Color3.new(0.666667, 0, 1)
+AutoFarmSB.BorderSizePixel = 3
+AutoFarmSB.Position = UDim2.new(0.38154614, 0, 0.216957614, 0)
+AutoFarmSB.Size = UDim2.new(0, 95, 0, 29)
+AutoFarmSB.Font = Enum.Font.Fantasy
+AutoFarmSB.Text = "Infinite Yield"
+AutoFarmSB.TextColor3 = Color3.new(0, 1, 0.498039)
+AutoFarmSB.TextScaled = true
+AutoFarmSB.TextSize = 14
+AutoFarmSB.TextWrapped = true
+AutoFarmSB.MouseButton1Down:connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end)
+	
+AutoFarmStopB.Name = "AutoFarmStopB"
+AutoFarmStopB.Parent = GUI
+AutoFarmStopB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+AutoFarmStopB.BorderColor3 = Color3.new(0.666667, 0, 1)
+AutoFarmStopB.BorderSizePixel = 3
+AutoFarmStopB.Position = UDim2.new(0.379052401, 0, 0.837905228, 0)
+AutoFarmStopB.Size = UDim2.new(0, 95, 0, 29)
+AutoFarmStopB.Font = Enum.Font.Fantasy
+AutoFarmStopB.Text = "AntiAFK"
+AutoFarmStopB.TextColor3 = Color3.new(0, 1, 0.498039)
+AutoFarmStopB.TextScaled = true
+AutoFarmStopB.TextSize = 14
+AutoFarmStopB.TextWrapped = true
+AutoFarmStopB.MouseButton1Down:connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/ColuiCheSpara/AntiAFK/main/AntiAFK'))()
+end)
+
+KillAllB.Name = "KillAllB"
+KillAllB.Parent = GUI
+KillAllB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+KillAllB.BorderColor3 = Color3.new(0.666667, 0, 1)
+KillAllB.BorderSizePixel = 3
+KillAllB.Position = UDim2.new(0.0548628569, 0, 0.837905228, 0)
+KillAllB.Size = UDim2.new(0, 95, 0, 29)
+KillAllB.Font = Enum.Font.Fantasy
+KillAllB.Text = "KillAll"
+KillAllB.TextColor3 = Color3.new(0, 1, 0.498039)
+KillAllB.TextScaled = true
+KillAllB.TextSize = 14
+KillAllB.TextWrapped = true
+KillAllB.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/ColuiCheSpara/KillAll/main/KillAll'))()
+end)
+
+BetterGraphicB.Name = "BetterGraphicB"
+BetterGraphicB.Parent = GUI
+BetterGraphicB.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+BetterGraphicB.BorderColor3 = Color3.new(0.666667, 0, 1)
+BetterGraphicB.BorderSizePixel = 3
+BetterGraphicB.Position = UDim2.new(0.705735683, 0, 0.837905228, 0)
+BetterGraphicB.Size = UDim2.new(0, 95, 0, 29)
+BetterGraphicB.Font = Enum.Font.Fantasy
+BetterGraphicB.Text = "Better Graphic"
+BetterGraphicB.TextColor3 = Color3.new(0, 1, 0.498039)
+BetterGraphicB.TextScaled = true
+BetterGraphicB.TextSize = 14
+BetterGraphicB.TextWrapped = true
+	BetterGraphicB.MouseButton1Down:connect(function()
+		sethiddenproperty(game:GetService("Workspace").Terrain, "Decoration", true)
+		sethiddenproperty(game:GetService("Lighting"), "Technology", "Future")
+		local light = game.Lighting
+		for i, v in pairs(light:GetChildren()) do
+			v:Destroy()
+		end
+
+		local ter = workspace.Terrain
+		local color = Instance.new("ColorCorrectionEffect")
+		local bloom = Instance.new("BloomEffect")
+		local sun = Instance.new("SunRaysEffect")
+		local blur = Instance.new("BlurEffect")
+
+		color.Parent = light
+		bloom.Parent = light
+		sun.Parent = light
+		blur.Parent = light
+
+		-- enable or disable shit
+
+		local config = {
+
+			Terrain = true;
+			ColorCorrection = true;
+			Sun = true;
+			Lighting = true;
+			BloomEffect = true;
+
+		}
+
+		-- settings {
+
+		color.Enabled = false
+		color.Contrast = 0.15
+		color.Brightness = 0.1
+		color.Saturation = 0.25
+		color.TintColor = Color3.fromRGB(255, 222, 211)
+
+		bloom.Enabled = false
+		bloom.Intensity = 0.1
+
+		sun.Enabled = false
+		sun.Intensity = 0.2
+		sun.Spread = 1
+
+		bloom.Enabled = false
+		bloom.Intensity = 0.05
+		bloom.Size = 32
+		bloom.Threshold = 1
+
+		blur.Enabled = false
+		blur.Size = 6
+
+		-- settings }
+
+
+		if config.ColorCorrection then
+			color.Enabled = true
+		end
+
+
+		if config.Sun then
+			sun.Enabled = true
+		end
+
+
+		if config.Terrain then
+			-- settings {
+			ter.WaterColor = Color3.fromRGB(10, 10, 24)
+			ter.WaterWaveSize = 0.1
+			ter.WaterWaveSpeed = 22
+			ter.WaterTransparency = 6
+			ter.WaterReflectance = 6
+			-- settings }
+		end
+
+
+		if config.Lighting then
+			-- settings {
+			light.Ambient = Color3.fromRGB(0, 0, 0)
+			light.Brightness = 4
+			light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+			light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+			light.ExposureCompensation = 0
+			light.FogColor = Color3.fromRGB(132, 132, 132)
+			light.GlobalShadows = true
+			light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+			light.Outlines = false
+			-- settings }
+		end
+	end)
+
+
+OpenMain.Name = "OpenMain"
+OpenMain.Parent = ScreenGui
+OpenMain.BackgroundColor3 = Color3.new(1, 1, 1)
+OpenMain.Position = UDim2.new(0.0102639291, 0, 0.873362422, 0)
+OpenMain.Size = UDim2.new(0, 139, 0, 52)
+Close.Visible = false
+
+YouMust.Name = "YouMust"
+YouMust.Parent = GUI
+YouMust.BackgroundColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+YouMust.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+YouMust.Position = UDim2.new(0.0149625931, 0, 0.932668328, 0)
+YouMust.Size = UDim2.new(0, 394, 0, 21)
+YouMust.Font = Enum.Font.Cartoon
+YouMust.Text = "Colui kills all the assholes like trotrosala, and he will use the \"Player Smasher\" to do it."
+YouMust.TextColor3 = Color3.new(0, 0.333333, 1)
+YouMust.TextScaled = true
+YouMust.TextSize = 14
+YouMust.TextWrapped = true
+
+Open.Name = "Open"
+Open.Parent = OpenMain
+Open.BackgroundColor3 = Color3.new(0.333333, 0, 0.498039)
+Open.Position = UDim2.new(0, 0, 1.1920929e-07, 0)
+Open.Size = UDim2.new(0, 139, 0, 52)
+Open.Font = Enum.Font.GrenzeGotisch
+Open.Text = "Open"
+Open.TextColor3 = Color3.new(0, 1, 0.498039)
+Open.TextScaled = true
+Open.TextSize = 14
+Open.TextWrapped = true
+Open.MouseButton1Down:connect(function()
+GUI.Visible = true
+Open.Visible = false
+Close.Visible = true
+end)
+	
+Close.Parent = OpenMain
+Close.BackgroundColor3 = Color3.new(0.333333, 0, 0.498039)
+Close.Position = UDim2.new(0, 0, 1.1920929e-07, 0)
+Close.Size = UDim2.new(0, 139, 0, 52)
+Close.Font = Enum.Font.GrenzeGotisch
+Close.Text = "Close"
+Close.TextColor3 = Color3.new(0, 1, 0.498039)
+Close.TextSize = 14
+Close.TextScaled = true
+Close.TextWrapped = true
+Close.Visible = false
+Close.MouseButton1Down:connect(function()
+GUI.Visible = false
+Open.Visible = true
+Close.Visible = false
+	
+end)
