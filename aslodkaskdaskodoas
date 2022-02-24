@@ -25,9 +25,11 @@ local OpenMain = Instance.new("Frame")
 local Open = Instance.new("TextButton")
 local Close = Instance.new("TextButton")
 local YouMust = Instance.new("TextLabel")
+local Player = game.Players.LocalPlayer
 
 -- Properties
 
+if Player.Name == "Vermixxnt" or Player.Name == "llxBrittxll" or Player.Name == "zombieboyy2O2O" or Player.Name == "AbstractKev" then
 ScreenGui.Parent = game.CoreGui
 
 GUI.Name = "GUI"
@@ -689,5 +691,5 @@ Close.MouseButton1Down:connect(function()
 GUI.Visible = false
 Open.Visible = true
 Close.Visible = false
-	
 end)
+end
